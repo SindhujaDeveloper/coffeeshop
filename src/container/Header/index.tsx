@@ -2,10 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 import '../../assets/css/header.css';
 import profile_image from '../../assets/images/profile_image.png';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
 
 	const navigate = useNavigate();
+	const isLogin = useSelector((state: any) => state.login.isLogin);
 
 	return (
 		<Navbar expand="lg">
@@ -40,7 +42,12 @@ export default function Header() {
 						width={'50px'}
 						roundedCircle
 						onClick={() => {
-							navigate('./login')
+							if (isLogin) {
+								navigate('./signUp')
+							}
+							else {
+								navigate('./login')
+							}
 							// console.log('navigate', navigate)
 						}}
 					/>
