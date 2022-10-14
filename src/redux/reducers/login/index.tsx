@@ -9,41 +9,47 @@ const initialState = {
     isLogin: false
 };
 
-export const loginReducer = (state: { successMessage: string, errorMessage: string, loading: boolean, isLogin: boolean } = initialState, action: LoginAction) => {
+export const loginReducer = (state: { successMessage: string, errorMessage: string, loading: boolean, isLogin: boolean, userDetails: any } = initialState, action: LoginAction) => {
     switch (action.type) {
         case actionTypes.SIGNUP_REQUEST:
             return {
                 ...state,
                 loading: true,
+                errorMessage: ''
             };
         case actionTypes.SIGNUP_RESPONSE:
             return {
                 ...state,
                 loading: false,
-                userDetails: action.payload,
+                userDetails: action.payload.user,
                 isLogin: true,
-                successMessage: 'user created successfully',
+                successMessage: action.payload.successMessage,
+                errorMessage: ''
             };
         case actionTypes.SIGNUP_FAILURE:
             return {
+                ...state,
                 loading: false,
                 errorMessage: action.payload
             };
         case actionTypes.LOGIN_REQUEST:
             return {
                 ...state,
-                loading: true
+                loading: true,
+                errorMessage: ''
             };
         case actionTypes.LOGIN_RESPONSE:
             return {
                 ...state,
-                userDetails: action.payload,
-                successMessage: action.payload,
+                userDetails: action.payload.user,
+                successMessage: action.payload.successMessage,
                 isLogin: true,
-                loading: false
+                loading: false,
+                errorMessage: ''
             };
         case actionTypes.LOGIN_FAILURE:
             return {
+                ...state,
                 loading: false,
                 errorMessage: action.payload,
                 isLogin: false,
@@ -62,6 +68,7 @@ export const loginReducer = (state: { successMessage: string, errorMessage: stri
             };
         case actionTypes.PROFILE_UPDATE_FAILURE:
             return {
+                ...state,
                 loading: false,
                 errorMessage: action.payload
             };

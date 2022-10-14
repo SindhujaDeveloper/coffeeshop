@@ -6,14 +6,6 @@ import * as actionTypes from '../../actions/actionTypes/login';
 
 function* signupRequest(action: any): Generator<any> {
   try {
-    // const reqPayload = {
-    //   Mobileno: action.payload?.Mobileno,
-    //   Firstname: action.payload?.Firstname,
-    //   Lastname: action.payload?.Lastname,
-    //   City: action.payload?.City,
-    //   Gender: action.payload?.Gender,
-    //   Birthdate: action.payload?.Birthdate,
-    // };
     if (action.payload) {
       const response: any = yield apiCall({
         apiPath: action.payload.isLogin ? API_ROUTES.update.apiPath : API_ROUTES.signIn.apiPath,
@@ -22,21 +14,13 @@ function* signupRequest(action: any): Generator<any> {
         type: "public"
       });
       if (response.status === 401) {
-        yield put(signupFailure('Co uld not create user'));
+        yield put(signupFailure('Could not create user'));
       } else {
-        // const res: any = {
-        //   Birthdate: response.data.user.Birthdate,
-        //   City: response.data.user.City,
-        //   Firstname: response.data.user.Firstname,
-        //   Gender: response.data.user.Gender,
-        //   Lastname: response.data.user.Lastname,
-        //   Mobileno: response.data.user.Mobileno
-        // };
-        yield put(signupResponse(response.data.data.user));
+        yield put(signupResponse({ user: response.data.data.user, successMessage: response.data.message }));
       }
     }
   } catch (error: any) {
-    yield put(signupFailure(error));
+    yield put(signupFailure('Error Occured'));
   }
 }
 
@@ -51,34 +35,18 @@ function* loginRequest(action: any): Generator<any> {
         type: "public"
       });
       if (response.status === 200) {
-        yield put(loginResponse(response.data[0]));
+        yield put(loginResponse({ user: response.data.data.users[0], successMessage: response.data.message }));
       } else {
-        // const res: any = {
-        //   Birthdate: response.data[0].Birthdate,
-        //   City: response.data[0].City,
-        //   Firstname: response.data[0].Firstname,
-        //   Gender: response.data[0].Gender,
-        //   Lastname: response.data[0].Lastname,
-        //   Mobileno: response.data[0].Mobileno
-        // };
         yield put(loginFailure('Invalid credentials.'));
       }
     }
   } catch (error: any) {
-    yield put(loginFailure(error));
+    yield put(loginFailure('error occured'));
   }
 }
 
 function* profileUpdateRequest(action: any): Generator<any> {
   try {
-    // const reqPayload = {
-    //   Mobileno: action.payload?.Mobileno,
-    //   Firstname: action.payload?.Firstname,
-    //   Lastname: action.payload?.Lastname,
-    //   City: action.payload?.City,
-    //   Gender: action.payload?.Gender,
-    //   Birthdate: action.payload?.Birthdate,
-    // };
     if (action.payload) {
       const response: any = yield apiCall({
         apiPath: API_ROUTES.update.apiPath,
@@ -89,19 +57,11 @@ function* profileUpdateRequest(action: any): Generator<any> {
       if (response.status === 401) {
         yield put(profileUpdateFailure('profile update failure'));
       } else {
-        // const res: any = {
-        //   Birthdate: response.data.user.Birthdate,
-        //   City: response.data.user.City,
-        //   Firstname: response.data.user.Firstname,
-        //   Gender: response.data.user.Gender,
-        //   Lastname: response.data.user.Lastname,
-        //   Mobileno: response.data.user.Mobileno
-        // };
         yield put(profileUpdateResponse(response.data.data.user));
       }
     }
   } catch (error: any) {
-    yield put(signupFailure(error));
+    yield put(profileUpdateFailure('error occured'));
   }
 }
 
