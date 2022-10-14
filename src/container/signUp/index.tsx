@@ -2,14 +2,14 @@ import { Formik } from 'formik';
 import { Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { signupRequest } from '../../redux/actions/actions';
+import { signupRequest } from '../../redux/actions/login';
 
-export default function Login() {
+export default function SignUpwithProfile() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
 	const userDetails = useSelector((state: any) => state.login.userDetails);
-	console.log(userDetails)
+	const isLogin = useSelector((state: any) => state.login.isLogin);
 
 	return (
 		<Formik
@@ -19,11 +19,16 @@ export default function Login() {
 				Lastname: userDetails ? userDetails.Lastname : '',
 				Gender: userDetails ? userDetails.Gender : '',
 				Birthdate: userDetails ? userDetails.Birthdate : '',
-				City: userDetails ? userDetails.City : ''
+				City: userDetails ? userDetails.City : '',
 			}}
 			onSubmit={(values) => {
-				dispatch(signupRequest(values));
-				navigate('/')
+				if (isLogin) {
+					dispatch(signupRequest({ values, isLogin: true }));
+					navigate('/');
+				} else {
+					dispatch(signupRequest({ values, isLogin: false }));
+					navigate('/')
+				}
 			}}
 		>
 			{({ values, errors, handleChange, handleSubmit, setFieldTouched, touched, setFieldValue, handleBlur, dirty, isValid }) => {
@@ -39,6 +44,8 @@ export default function Login() {
 							className='login_fields'
 						/>
 						{errors.Mobileno && <div id="email">errors.Mobileno</div>}
+						{/* {isLogin && (
+							<> */}
 						<input
 							type="text"
 							onChange={handleChange}
@@ -89,6 +96,7 @@ export default function Login() {
 							className='login_fields'
 						/>
 						{errors.City && <div id="password">errors.City</div>}
+						{/* </>)} */}
 						<Button
 							disabled={!dirty}
 							type="submit"
