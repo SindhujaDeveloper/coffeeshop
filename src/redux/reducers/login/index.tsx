@@ -72,6 +72,14 @@ export const loginReducer = (state: { successMessage: string, errorMessage: stri
                 loading: false,
                 errorMessage: action.payload
             };
+        case actionTypes.LOGOUT:
+            return {
+                successMessage: '',
+                errorMessage: '',
+                userDetails: {},
+                loading: false,
+                isLogin: false
+            }
         default:
             return state;
     }

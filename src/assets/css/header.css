@@ -32,4 +32,23 @@ body {
 
 .profile_image {
     cursor: pointer;
+
 }
+
+.profileBtn {
+    background-color: #ffffff;
+    /* width: 102px;
+    height: 40px; */
+    color: #6B3715;
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* @media (min-width: 1400px) and (max-width: 1699px) {
+    .navbar-style {
+        background-color: #926546;
+        height: 107px;
+    }
+} */

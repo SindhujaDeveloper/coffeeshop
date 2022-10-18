@@ -4,12 +4,20 @@ import '../../assets/css/header.css';
 import profile_image from '../../assets/images/profile_image.png';
 import logo from '../../assets/images/logo.svg';
 import { useSelector } from 'react-redux';
-import BannerPage from '../banner';
+import { useState } from 'react';
+import { LogoutModal } from '../../components';
+import { logout } from '../../redux/actions/login';
+import { useDispatch } from 'react-redux';
 
 export default function Header() {
 
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
+
 	const isLogin = useSelector((state: any) => state.login.isLogin);
+	const [enable, setEnable] = useState(false);
+	const [alert, setAlert] = useState(false);
+
 
 	return (
 		<>
@@ -41,17 +49,40 @@ export default function Header() {
 								<Nav.Link href="#action4">Menu</Nav.Link>
 							</Nav.Item>
 						</Nav>
-						<div className='profile Button'>
+						<div className='sgnInsgnOutBtn'>
 							{isLogin ?
-								<Image
-									src={profile_image}
-									className='profile_image'
-									width={'50px'}
-									roundedCircle
-									onClick={() => {
-										navigate('./signUp');
-									}}
-								/> :
+								(
+									<>
+										<Image
+											src={profile_image}
+											className='profile_image'
+											width={'50px'}
+											roundedCircle
+											onClick={() => { setEnable(!enable) }}
+										/>
+										{
+											enable && (
+												<div className='profileBtn'>
+													<div
+														onClick={() => {
+															setEnable(false);
+															navigate('./signUp');
+														}}
+													>
+														Profile
+													</div>
+													<div
+														onClick={() => {
+															setAlert(true);
+															setEnable(false);
+														}}
+													>Logout</div>
+												</div>
+											)
+										}
+									</>
+								)
+								:
 								<Button
 									variant="light"
 									className='signinBtn'
@@ -75,7 +106,14 @@ export default function Header() {
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
-			<BannerPage />
+			<LogoutModal
+				show={alert}
+				closeAlert={() => setAlert(false)}
+				onLogout={() => {
+					dispatch(logout());
+					setAlert(false)
+				}}
+			/>
 		</>
 	);
 }

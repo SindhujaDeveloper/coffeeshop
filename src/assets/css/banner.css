@@ -1,5 +1,12 @@
-.banner_image {
-    /* width: 100%; */
-    height: 854px;
-    width: fit-content
+.row>* {
+    padding-left: 0;
+    padding-right: 0;
 }
+
+/* @media (min-width: 1400px) and (max-width: 1699px) {
+    .banner_image {
+        height: 214px;
+        width: fit-content
+    }
+} 
+*/

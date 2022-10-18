@@ -13,6 +13,9 @@ export const profileUpdateRequest = (payload: any) => createAction(actionTypes.P
 export const profileUpdateResponse = (data: any) => createAction(actionTypes.PROFILE_UPDATE_RESPONSE, data);
 export const profileUpdateFailure = (error: null | string) => createAction(actionTypes.PROFILE_UPDATE_FAILURE, error);
 
+export const logout = () => createAction(actionTypes.LOGOUT);
+
+
 const LOGIN_ACTIONS = {
     signupRequest,
     signupResponse,
@@ -22,7 +25,8 @@ const LOGIN_ACTIONS = {
     loginFailure,
     profileUpdateRequest,
     profileUpdateResponse,
-    profileUpdateFailure
+    profileUpdateFailure,
+    logout
 };
 
 export type LoginAction = ActionsUnion<typeof LOGIN_ACTIONS>;

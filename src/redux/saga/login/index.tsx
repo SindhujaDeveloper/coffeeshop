@@ -1,4 +1,4 @@
-import { put, all, fork, takeLatest } from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 import { apiCall } from '../../../utils/helpers/api-call';
 import { API_ROUTES } from '../../../utils/helpers/api-routes';
 import { loginFailure, loginResponse, profileUpdateFailure, profileUpdateResponse, signupFailure, signupResponse } from '../../actions/login';
@@ -16,7 +16,7 @@ function* signupRequest(action: any): Generator<any> {
       if (response.status === 401) {
         yield put(signupFailure('Could not create user'));
       } else {
-        yield put(signupResponse({ user: response.data.data.user, successMessage: response.data.message }));
+        yield put(signupResponse({ user: response.data.data.user[0], successMessage: response.data.message }));
       }
     }
   } catch (error: any) {
@@ -65,14 +65,9 @@ function* profileUpdateRequest(action: any): Generator<any> {
   }
 }
 
-function* loginRequestSaga() {
+export function* loginRequestSaga() {
   yield takeLatest(actionTypes.SIGNUP_REQUEST, signupRequest)
   yield takeLatest(actionTypes.LOGIN_REQUEST, loginRequest)
   yield takeLatest(actionTypes.PROFILE_UPDATE_REQUEST, profileUpdateRequest)
 }
 
-export default function* rootSaga() {
-  yield all([
-    fork(loginRequestSaga)
-  ])
-}

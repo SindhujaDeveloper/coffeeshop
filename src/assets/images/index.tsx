@@ -1,5 +1,7 @@
-import './profile_image.png';
-import './logo.svg';
-import './logo.png';
-import './carousel_image.svg';
-import './carousel_images.svg'
+export * from './profile_image.png';
+export * from './logo.svg';
+export * from './logo.png';
+export * from './carousel_image.svg';
+export * from './carousel_images.svg';
+export * from './carousel.svg';
+export * from './bg_image.svg';
