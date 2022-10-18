@@ -14,12 +14,12 @@ export default function SignUpwithProfile() {
 	return (
 		<Formik
 			initialValues={{
-				Firstname: userDetails ? userDetails.Firstname : '',
-				Mobileno: userDetails ? userDetails.Mobileno : '',
-				Lastname: userDetails ? userDetails.Lastname : '',
-				Gender: userDetails ? userDetails.Gender : '',
-				Birthdate: userDetails ? userDetails.Birthdate : '',
-				City: userDetails ? userDetails.City : '',
+				Firstname: isLogin ? userDetails.Firstname : '',
+				Mobileno: isLogin ? userDetails.Mobileno : '',
+				Lastname: isLogin ? userDetails.Lastname : '',
+				Gender: isLogin ? userDetails.Gender : '',
+				Birthdate: isLogin ? userDetails.Birthdate : '',
+				City: isLogin ? userDetails.City : '',
 			}}
 			onSubmit={(values) => {
 				if (isLogin) {
@@ -103,6 +103,11 @@ export default function SignUpwithProfile() {
 						>
 							Submit
 						</Button>
+						{/* {!isLogin && (
+							<p onClick={() => navigate('/Login')}>
+								Already have an account?. Please Login
+							</p>
+						)} */}
 					</form>
 				)
 			}}
