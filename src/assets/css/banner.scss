@@ -1,0 +1,101 @@
+/* Responsive should fixed */
+
+.row>* {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.background {
+    position: absolute;
+    right: 0%;
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    background: linear-gradient(89.87deg, #000000 0.1%, rgba(0, 0, 0, 0) 43.26%);
+}
+
+.head-text {
+    position: relative;
+}
+
+.text-on-image {
+    position: absolute;
+    right: 50%;
+    left: 12%;
+    bottom: 30%;
+}
+
+.text {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 75px;
+    color: #FFFFFF;
+}
+
+.bannerBtn {
+    width: 136px;
+    height: 36px;
+}
+
+.bannerBtnTxt {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    color: #6B3715;
+    text-align: center;
+    justify-content: center;
+}
+
+.bannerBottomBox {
+    background-color: #926546;
+    width: 78%;
+    // height: 15%;
+    position: absolute;
+    bottom: -50px;
+    left: 11%;
+    display: flex;
+    flex-direction: row;
+
+    .col {
+        padding-left: 5%;
+        width: 80%;
+    }
+
+    .table {
+        color: #FFFFFF;
+        margin-top: 20px;
+    }
+}
+
+.bookNow {
+    align-self: center;
+    padding-right: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .text-on-image {
+        bottom: 20%;
+    }
+
+    .text {
+        font-size: 14px;
+        line-height: 13px;
+    }
+
+    .bannerBtn {
+        width: 86px;
+        height: 20px;
+    }
+
+    .bannerBtnTxt {
+        font-size: 9px;
+    }
+
+    .bannerBottomBox {
+        bottom: -10px;
+    }
+
+
+}

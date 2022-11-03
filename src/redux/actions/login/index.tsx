@@ -13,8 +13,11 @@ export const profileUpdateRequest = (payload: any) => createAction(actionTypes.P
 export const profileUpdateResponse = (data: any) => createAction(actionTypes.PROFILE_UPDATE_RESPONSE, data);
 export const profileUpdateFailure = (error: null | string) => createAction(actionTypes.PROFILE_UPDATE_FAILURE, error);
 
-export const logout = () => createAction(actionTypes.LOGOUT);
+export const sendSmsRequest = (payload: any) => createAction(actionTypes.SEND_SMS_REQUEST, payload);
+export const sendSmsResponse = (data: any) => createAction(actionTypes.SEND_SMS_RESPONSE, data);
+export const sendSmsFailure = (error: null | string) => createAction(actionTypes.SEND_SMS_FAILURE, error);
 
+export const logout = () => createAction(actionTypes.LOGOUT);
 
 const LOGIN_ACTIONS = {
     signupRequest,
@@ -26,6 +29,9 @@ const LOGIN_ACTIONS = {
     profileUpdateRequest,
     profileUpdateResponse,
     profileUpdateFailure,
+    sendSmsRequest,
+    sendSmsResponse,
+    sendSmsFailure,
     logout
 };
 

@@ -1,116 +1,79 @@
-import { Formik } from 'formik';
-import { Button } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { signupRequest } from '../../redux/actions/login';
+// import { useDispatch, useSelector } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Col, Row, Image, Tabs, Tab } from 'react-bootstrap';
+
+// import { Formik } from 'formik';
+
+import "../../assets/css/signup.scss";
+import coffee_cup from '../../assets/images/corner_image1.png';
+
+// import { signupRequest } from '../../redux/actions/login';
+
+import Login from '../login';
+import SignUp from './signup';
 
 export default function SignUpwithProfile() {
-	const dispatch = useDispatch();
+
+	// const dispatch = useDispatch();
 	const navigate = useNavigate();
+	const location = useLocation();
 
-	const userDetails = useSelector((state: any) => state.login.userDetails);
-	const isLogin = useSelector((state: any) => state.login.isLogin);
+	console.log(location.pathname.split('/')[2], 'location')
 
+	// const { isLogin, userDetails } = useSelector((state: any) => state.login);
+
+	const routePush = (path: string) => {
+		navigate({ pathname: path });
+	};
+
+	// return (
+	// 	<Formik
+	// 		initialValues={{
+	// 			Firstname: isLogin ? userDetails.Firstname : '',
+	// 			Mobileno: isLogin ? userDetails.Mobileno : '',
+	// 			Lastname: isLogin ? userDetails.Lastname : '',
+	// 			Gender: isLogin ? userDetails.Gender : '',
+	// 			Birthdate: isLogin ? userDetails.Birthdate : '',
+	// 			City: isLogin ? userDetails.City : '',
+	// 		}}
+	// 		onSubmit={(values) => {
+	// 			if (isLogin) {
+	// 				dispatch(signupRequest({ values, isLogin: true }));
+	// 			} else {
+	// 				dispatch(signupRequest({ values }));
+	// 				navigate('/')
+	// 			}
+	// 		}}
+	// 	>
+	// 		{({ values, errors, handleChange, handleSubmit, handleBlur, dirty, isValid }) => {
 	return (
-		<Formik
-			initialValues={{
-				Firstname: isLogin ? userDetails.Firstname : '',
-				Mobileno: isLogin ? userDetails.Mobileno : '',
-				Lastname: isLogin ? userDetails.Lastname : '',
-				Gender: isLogin ? userDetails.Gender : '',
-				Birthdate: isLogin ? userDetails.Birthdate : '',
-				City: isLogin ? userDetails.City : '',
-			}}
-			onSubmit={(values) => {
-				if (isLogin) {
-					dispatch(signupRequest({ values, isLogin: true }));
-					navigate('/');
-				} else {
-					dispatch(signupRequest({ values, isLogin: false }));
-					navigate('/')
-				}
-			}}
-		>
-			{({ values, errors, handleChange, handleSubmit, setFieldTouched, touched, setFieldValue, handleBlur, dirty, isValid }) => {
-				return (
-					<form onSubmit={handleSubmit}>
-						<input
-							type="text"
-							onChange={handleChange}
-							onBlur={handleBlur}
-							value={values.Mobileno}
-							name="Mobileno"
-							placeholder="Mobile No"
-							className='login_fields'
-						/>
-						{errors.Mobileno && <div id="email">errors.Mobileno</div>}
-						{/* {isLogin && (
-							<> */}
-						<input
-							type="text"
-							onChange={handleChange}
-							onBlur={handleBlur}
-							value={values.Firstname}
-							name="Firstname"
-							placeholder="First Name"
-							className='login_fields'
-						/>
-						{errors.Firstname && <div id="password">errors.Firstname</div>}
-						<input
-							type="text"
-							onChange={handleChange}
-							onBlur={handleBlur}
-							value={values.Lastname}
-							name="Lastname"
-							placeholder="Last Name"
-							className='login_fields'
-						/>
-						{errors.Lastname && <div id="password">errors.Lastname</div>}
-						<input
-							type="text"
-							onChange={handleChange}
-							onBlur={handleBlur}
-							value={values.Birthdate}
-							name="Birthdate"
-							placeholder="Date Of Birth"
-							className='login_fields'
-						/>
-						{errors.Birthdate && <div id="password">errors.Birthdate</div>}
-						<input
-							type="text"
-							onChange={handleChange}
-							onBlur={handleBlur}
-							value={values.Gender}
-							name="Gender"
-							placeholder="Gender"
-							className='login_fields'
-						/>
-						{errors.Gender && <div id="password">errors.Gender</div>}
-						<input
-							type="text"
-							onChange={handleChange}
-							onBlur={handleBlur}
-							value={values.City}
-							name="City"
-							placeholder="City"
-							className='login_fields'
-						/>
-						{errors.City && <div id="password">errors.City</div>}
-						{/* </>)} */}
-						<Button
-							disabled={!dirty}
-							type="submit"
+		<div className='signup_mainpage'>
+			<Row>
+				<Col xs={12} md={4}>
+					<div className="signup_form">
+						<Tabs
+							id="justify-tab-example"
+							activeKey={location.pathname.split('/')[2]}
+							onSelect={(k: any) => routePush(k)}
+							className="tabs_container"
+							justify
 						>
-							Submit
-						</Button>
-						{/* {!isLogin && (
-							<p onClick={() => navigate('/Login')}>
-								Already have an account?. Please Login
-							</p>
-						)} */}
-					</form>
-				)
-			}}
-		</Formik>
+							<Tab eventKey="signup" title="SignUp" className='tab'>
+								<SignUp />
+							</Tab>
+							<Tab eventKey="login" title="Login" className='tab'>
+								<Login />
+							</Tab>
+						</Tabs>
+					</div>
+				</Col>
+				<Col xs={12} md={4}>
+					<Image src={coffee_cup} style={{ width: '202%', height: '105%' }} />
+				</Col>
+			</Row>
+		</div>
+		// )
+		// 	}}
+		// </Formik >
 	);
 }

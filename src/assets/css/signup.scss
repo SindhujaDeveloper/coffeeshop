@@ -1,0 +1,131 @@
+// .signup_page {
+//   align-items: center;
+//   justify-content: center;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .title {
+//   font-size: 25px;
+//   font-weight: bold;
+//   color: #6B3715;
+//   text-align: center;
+//   padding: 3%;
+// }
+
+// .login_fields {
+//   width: 30%;
+//   margin-bottom: 2%;
+//   align-items: center;
+//   justify-content: center;
+//   padding-left: 2.3rem;
+//   color: #6B3715;
+//   line-height: 3rem;
+//   border: #6B3715 solid 0.1rem;
+//   border-radius: 1rem;
+//   font-size: 18px;
+// }
+
+// input:focus {
+//   border: #6B3715 solid 0.2rem;
+//   border-radius: 1rem;
+// }
+
+// .commonBtn {
+//   color: #FFFFFF;
+//   width: 30%;
+//   background-color: #6B3715;
+//   height: 3rem;
+//   border: #6B3715 solid 0.1rem;
+//   border-radius: 1rem;
+// }
+
+// .commonBtn:disabled {
+//   background-color: #926546;
+//   color: #FFFFFF80;
+// }
+
+// .back {
+//   margin-top: 1.4%;
+//   // color: #FFFFFF;
+// }
+
+
+
+// .signup_container {
+// background-image: url('../images/top_design.png');
+// background-size: contain;
+// height: 800px;
+// width: 1200px
+// }
+
+.row>* {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.signup_mainpage {
+  background-image: url('../images/top_design.png');
+  height: 120%;
+  // background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .row {
+    width: 100%;
+    padding-top: 13%;
+    padding-left: 22%;
+  }
+}
+
+.signup_form {
+  margin-top: 30px;
+  width: 478px;
+  height: 572px;
+  background: #FFF3E6;
+  box-shadow: -3px 11px 27px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.form {
+  flex-direction: column;
+}
+
+.tabs_container {
+  height: 12%;
+}
+
+.nav-tabs {
+  border-bottom: #6B3715;
+  border-bottom-width: 1px;
+  width: fit-content;
+}
+
+.nav-justified .nav-item {
+  padding-left: 100px;
+}
+
+.nav-justified .nav-item .nav-link {
+  font-size: 18px;
+  height: 80%;
+  text-transform: uppercase;
+  color: #926546;
+  border: none;
+}
+
+.nav-tabs .nav-link.active {
+  color: #6B3715;
+  background-color: #FFF3E6;
+  font-weight: bold;
+  border: none;
+  border-bottom-style: solid;
+  border-color: #6B3715;
+}
+
+// .coffeecup_image {
+//   background-image: url('../images/corner_image1.png');
+//   height: 100%;
+//   // // background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: contain;
+// }
