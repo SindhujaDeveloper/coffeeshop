@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { LogoutModal } from '../../components';
 import { logout } from '../../redux/actions/login';
 import { useDispatch } from 'react-redux';
+import { ProfileModal } from '../../components/profileModal';
 
 export default function Header() {
 
@@ -15,9 +16,9 @@ export default function Header() {
 	const dispatch = useDispatch();
 
 	const isLogin = useSelector((state: any) => state.login.isLogin);
-	const [enable, setEnable] = useState(false);
+	const [showButtons, setShowButtons] = useState(false);
+	const [showProfile, setShowProfile] = useState(false);
 	const [alert, setAlert] = useState(false);
-
 
 	return (
 		<>
@@ -51,45 +52,23 @@ export default function Header() {
 						</Nav>
 						<div className='sgnInsgnOutBtn'>
 							{isLogin ?
-								(
-									<>
-										<Image
-											src={profile_image}
-											className='profile_image'
-											width={'50px'}
-											roundedCircle
-											onClick={() => { setEnable(!enable) }}
-										/>
-										{
-											enable && (
-												<div className='profileBtn'>
-													<div
-														onClick={() => {
-															setEnable(false);
-															navigate('./signUp');
-														}}
-													>
-														Profile
-													</div>
-													<div
-														onClick={() => {
-															setAlert(true);
-															setEnable(false);
-														}}
-													>Logout</div>
-												</div>
-											)
-										}
-									</>
-								)
+								<>
+									<Image
+										src={profile_image}
+										className='profile_image'
+										width={'50px'}
+										roundedCircle
+										onClick={() => setShowButtons(!showButtons)}
+									/>
+									{showButtons && (
+										<div className='profileBtn'>
+											<div onClick={() => { setShowProfile(true); setShowButtons(false) }}>Profile</div>
+											<div onClick={() => { setAlert(true); setShowButtons(false) }}>Logout</div>
+										</div>
+									)}
+								</>
 								:
-								<Button
-									variant="light"
-									className='signinBtn'
-									onClick={() => {
-										navigate('./login');
-									}}
-								>
+								<Button variant="light" className='signinBtn' onClick={() => navigate('/main/login')}>
 									<p className='signinTxt'>Sign In</p>
 								</Button>}
 						</div>
@@ -106,6 +85,10 @@ export default function Header() {
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
+			<ProfileModal
+				show={showProfile}
+				closeModal={() => setShowProfile(false)}
+			/>
 			<LogoutModal
 				show={alert}
 				closeAlert={() => setAlert(false)}
