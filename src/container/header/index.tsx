@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
-import '../../assets/css/header.css';
+import '../../assets/css/header.scss';
 import profile_image from '../../assets/images/profile_image.png';
 import logo from '../../assets/images/logo.svg';
 import { useSelector } from 'react-redux';

@@ -11,47 +11,46 @@ import calendarIcon from '../../assets/images/calendar.png';
 import genderIcon from '../../assets/images/gender.png';
 import cityIcon from '../../assets/images/city.png';
 
-
 export default function SignUp() {
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
-	const { isLogin, userDetails } = useSelector((state: any) => state.login);
+	const { isLogin, userDetails, errorMessage, successMessage } = useSelector((state: any) => state.login);
 
 	// const routePush = (path: string) => {
 	// 	navigate({ pathname: path });
 	// };
 
+	console.log(errorMessage, successMessage, 'errorMessage')
 	return (
 		<Formik
 			initialValues={{
-				Firstname: isLogin ? userDetails.Firstname : '',
-				Mobileno: isLogin ? userDetails.Mobileno : '',
-				Lastname: isLogin ? userDetails.Lastname : '',
-				Gender: isLogin ? userDetails.Gender : '',
-				Birthdate: isLogin ? userDetails.Birthdate : '',
-				City: isLogin ? userDetails.City : '',
+				Firstname: isLogin ? userDetails?.Firstname : '',
+				Mobileno: isLogin ? userDetails?.Mobileno : '',
+				Lastname: isLogin ? userDetails?.Lastname : '',
+				Gender: isLogin ? userDetails?.Gender : '',
+				Birthdate: isLogin ? userDetails?.Birthdate : '',
+				City: isLogin ? userDetails?.City : '',
 			}}
 			onSubmit={(values) => {
-				if (isLogin) {
-					dispatch(signupRequest({ values, isLogin: true }));
-				} else {
-					dispatch(signupRequest({ values }));
-					navigate('/')
-				}
+				// if (isLogin) {
+				// 	dispatch(signupRequest({ values, isLogin: true }));
+				// } else {
+				dispatch(signupRequest({ values }));
+				// }
 			}}
 		>
 			{({ values, errors, handleChange, handleSubmit, handleBlur, dirty, isValid }) => {
 
 				const disableUserDetails = () => {
 					if (
-						values.Firstname === userDetails.Firstname &&
-						values.Lastname === userDetails.Lastname &&
-						values.City === userDetails.City &&
-						values.Gender === userDetails.Gender &&
-						values.Birthdate === userDetails.Birthdate &&
-						values.Mobileno === userDetails.Mobileno && values.Mobileno !== ''
+						values.Firstname === userDetails?.Firstname &&
+						values.Lastname === userDetails?.Lastname &&
+						values.City === userDetails?.City &&
+						values.Gender === userDetails?.Gender &&
+						values.Birthdate === userDetails?.Birthdate &&
+						values.Mobileno === userDetails?.Mobileno && values.Mobileno !== ''
 					) return true
 				}
 

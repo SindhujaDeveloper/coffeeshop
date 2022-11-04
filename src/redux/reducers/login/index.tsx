@@ -18,13 +18,14 @@ export const loginReducer = (state: { successMessage: string, errorMessage: stri
                 errorMessage: ''
             };
         case actionTypes.SIGNUP_RESPONSE:
+            console.log(action.payload, 'SignUp---------------Response')
             return {
                 ...state,
                 loading: false,
                 userDetails: action.payload.user,
                 isLogin: true,
                 successMessage: action.payload.successMessage,
-                errorMessage: ''
+                // errorMessage: ''
             };
         case actionTypes.SIGNUP_FAILURE:
             return {

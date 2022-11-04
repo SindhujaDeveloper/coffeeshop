@@ -32,8 +32,8 @@ export default function BannerPage() {
                                 <td style={{ borderRightColor: 'transparent' }}>Time</td>
                             </tr>
                             <tr style={{ borderTopColor: 'transparent', borderBottomColor: 'transparent', textAlign: 'center', paddingTop: '20px' }}>
-                                <th style={{ borderLeftColor: 'transparent' }}>{userDetails.Firstname || 'Prema'}</th>
-                                <th>{userDetails.Mobileno || '7868049366'}</th>
+                                <th style={{ borderLeftColor: 'transparent' }}>{userDetails?.Firstname || 'Prema'}</th>
+                                <th>{userDetails?.Mobileno || '7868049366'}</th>
                                 <th>{'Expresso'}</th>
                                 <th>4 Person</th>
                                 <th style={{ borderRightColor: 'transparent' }}>12.00PM</th>

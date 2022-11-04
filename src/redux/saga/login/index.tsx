@@ -7,7 +7,6 @@ import * as actionTypes from '../../actions/actionTypes/login';
 function* signupRequest(action: any): Generator<any> {
   try {
     if (action.payload) {
-      console.log(action.payload.values)
       const response: any = yield apiCall({
         apiPath: action.payload.isLogin ? API_ROUTES.update.apiPath : API_ROUTES.signIn.apiPath,
         method: API_ROUTES.signIn.method,
@@ -16,10 +15,11 @@ function* signupRequest(action: any): Generator<any> {
         data: action.payload?.values,
         type: "public",
       });
-      if (response.status === 401) {
-        yield put(signupFailure('Could not create user'));
+      if (response.status === 200) {
+        yield put(signupResponse({ user: response.data.data.user, successMessage: response.data.message }));
       } else {
-        yield put(signupResponse({ user: response.data.data.user[0], successMessage: response.data.message }));
+        console.log(response)
+        yield put(signupFailure('User already exists'));
       }
     }
   } catch (error: any) {

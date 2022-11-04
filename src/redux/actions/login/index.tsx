@@ -3,7 +3,7 @@ import * as actionTypes from '../actionTypes/login';
 
 export const signupRequest = (payload: any) => createAction(actionTypes.SIGNUP_REQUEST, payload);
 export const signupResponse = (data: { user: any; successMessage: string }) => createAction(actionTypes.SIGNUP_RESPONSE, data);
-export const signupFailure = (error: null | string) => createAction(actionTypes.SIGNUP_FAILURE, error);
+export const signupFailure = (payload: any) => createAction(actionTypes.SIGNUP_FAILURE, payload);
 
 export const loginRequest = (payload: { Mobileno: string } | { sso_token: string }) => createAction(actionTypes.LOGIN_REQUEST, payload);
 export const loginResponse = (data: { user: any; successMessage: string }) => createAction(actionTypes.LOGIN_RESPONSE, data);

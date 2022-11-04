@@ -24,7 +24,6 @@ function App() {
         {routes.map((it, index) => {
           const Component = it.component;
           if (it.public) {
-            console.log(it.component,'yes')
             return (
               <Route
                 key={`publicRouteOf${index}`}
@@ -37,7 +36,6 @@ function App() {
               />
             );
           } else {
-            console.log('NextComponent')
             return (
               <Route
                 key={`privateRouteOf${index}`}

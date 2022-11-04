@@ -18,8 +18,8 @@ export default function Login() {
             dispatch(sendSmsRequest({
                 'apikey': '6on957rb36978j0rl148a6j226v03jmr',
                 'sender': 'SEDEMO',
-                'to': userDetails.Mobileno,
-                'message': `Hello ${userDetails.Firstname || ''}, This is a test message from spring edge`,
+                'to': userDetails?.Mobileno,
+                'message': `Hello ${userDetails?.Firstname || ''}, This is a test message from spring edge`,
                 'format': 'json'
             }))
             navigate('/');
