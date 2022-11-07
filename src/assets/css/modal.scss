@@ -35,3 +35,40 @@
     align-items: center;
     background-image: url('../images/bg_image.svg');
 }
+
+.form_profile {
+
+    .form-control {
+        background: #FFF3E6;
+        border-radius: 8px;
+        border-color: #926546;
+        color: #6B3715;
+        border-width: 3px;
+    }
+
+    .form-control:focus {
+        border-width: 3.5px;
+        border-color: #6B3715;
+        box-shadow: none;
+        background-color: #FFF3E6;
+        color: #6B3715;
+        font-weight: 800;
+
+
+    }
+
+    .commonBtn {
+        color: #FFFFFF;
+        width: 30%;
+        background-color: #6B3715;
+        height: 3rem;
+        // border: #6B3715 solid 0.1rem;
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .commonBtn:disabled {
+        background-color: #926546;
+        color: #FFFFFF80;
+    }
+}

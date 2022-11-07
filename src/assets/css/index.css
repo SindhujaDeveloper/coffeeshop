@@ -1,0 +1,20 @@
+body {
+    font-family: 'Roboto';
+}
+
+.welcome_title {
+    font-style: italic;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 56px;
+    color: #6B3715;
+}
+
+.welcome_text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    letter-spacing: 0.008em;
+}
