@@ -1,1 +1,13 @@
-import './profile_image.png'
+export * from './profile_image.png';
+export * from './logo.svg';
+export * from './logo.png';
+export * from './carousel_image.svg';
+export * from './carousel_images.svg';
+export * from './carousel.svg';
+export * from './bg_image.svg';
+export * from './coffee_cup.png';
+export * from './coco.png';
+export * from './right_corner.png';
+export * from './small_cup.png';
+export * from './top_design.png';
+export * from './phoneIcon.png';
