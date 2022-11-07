@@ -37,7 +37,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "react-scripts lint"
+    "lint": "react-scripts lint",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix reactFolderName && npm run build --prefix reactFolderName"
   },
   "eslintConfig": {
     "extends": [
