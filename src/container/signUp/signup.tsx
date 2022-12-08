@@ -26,12 +26,12 @@ export default function SignUp() {
 	return (
 		<Formik
 			initialValues={{
-				Firstname: isLogin ? userDetails.Firstname : '',
-				Mobileno: isLogin ? userDetails.Mobileno : '',
-				Lastname: isLogin ? userDetails.Lastname : '',
-				Gender: isLogin ? userDetails.Gender : '',
-				Birthdate: isLogin ? userDetails.Birthdate : '',
-				City: isLogin ? userDetails.City : '',
+				Firstname: isLogin ? userDetails?.Firstname : '',
+				Mobileno: isLogin ? userDetails?.Mobileno : '',
+				Lastname: isLogin ? userDetails?.Lastname : '',
+				Gender: isLogin ? userDetails?.Gender : '',
+				Birthdate: isLogin ? userDetails?.Birthdate : '',
+				City: isLogin ? userDetails?.City : '',
 			}}
 			onSubmit={(values) => {
 				if (isLogin) {
@@ -46,12 +46,12 @@ export default function SignUp() {
 
 				const disableUserDetails = () => {
 					if (
-						values.Firstname === userDetails.Firstname &&
-						values.Lastname === userDetails.Lastname &&
-						values.City === userDetails.City &&
-						values.Gender === userDetails.Gender &&
-						values.Birthdate === userDetails.Birthdate &&
-						values.Mobileno === userDetails.Mobileno && values.Mobileno !== ''
+						values.Firstname === userDetails?.Firstname &&
+						values.Lastname === userDetails?.Lastname &&
+						values.City === userDetails?.City &&
+						values.Gender === userDetails?.Gender &&
+						values.Birthdate === userDetails?.Birthdate &&
+						values.Mobileno === userDetails?.Mobileno && values.Mobileno !== ''
 					) return true
 				}
 
