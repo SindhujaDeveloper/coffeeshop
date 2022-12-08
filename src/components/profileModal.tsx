@@ -34,7 +34,7 @@ export const ProfileModal = ({ show, closeModal }: IProfileModal) => {
 
 				<Formik
 					initialValues={{
-						Firstname: isLogin ? userDetails.Firstname : '',
+						Firstname: isLogin ? userDetails?.Firstname : '',
 						Mobileno: isLogin ? userDetails.Mobileno : '',
 						Lastname: isLogin ? userDetails.Lastname : '',
 						Gender: isLogin ? userDetails.Gender : '',
