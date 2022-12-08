@@ -35,11 +35,11 @@ export const ProfileModal = ({ show, closeModal }: IProfileModal) => {
 				<Formik
 					initialValues={{
 						Firstname: isLogin ? userDetails?.Firstname : '',
-						Mobileno: isLogin ? userDetails.Mobileno : '',
-						Lastname: isLogin ? userDetails.Lastname : '',
-						Gender: isLogin ? userDetails.Gender : '',
-						Birthdate: isLogin ? userDetails.Birthdate : '',
-						City: isLogin ? userDetails.City : '',
+						Mobileno: isLogin ? userDetails?.Mobileno : '',
+						Lastname: isLogin ? userDetails?.Lastname : '',
+						Gender: isLogin ? userDetails?.Gender : '',
+						Birthdate: isLogin ? userDetails?.Birthdate : '',
+						City: isLogin ? userDetails?.City : '',
 					}}
 					onSubmit={(values) => {
 						dispatch(signupRequest({ values, isLogin: true }));
@@ -49,12 +49,12 @@ export const ProfileModal = ({ show, closeModal }: IProfileModal) => {
 
 						const disableUserDetails = () => {
 							if (
-								values.Firstname === userDetails.Firstname &&
-								values.Lastname === userDetails.Lastname &&
-								values.City === userDetails.City &&
-								values.Gender === userDetails.Gender &&
-								values.Birthdate === userDetails.Birthdate &&
-								values.Mobileno === userDetails.Mobileno && values.Mobileno !== ''
+								values.Firstname === userDetails?.Firstname &&
+								values.Lastname === userDetails?.Lastname &&
+								values.City === userDetails?.City &&
+								values.Gender === userDetails?.Gender &&
+								values.Birthdate === userDetails?.Birthdate &&
+								values.Mobileno === userDetails?.Mobileno && values.Mobileno !== ''
 							) return true
 						}
 
