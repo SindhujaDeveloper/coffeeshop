@@ -1,0 +1,34 @@
+.mainCard {
+    width: 20.3vw;
+    height: 24.8vw;
+    border-radius: 2vw;
+    color: black;
+    background-color: #926546;
+}
+
+.main-menulist {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.menuItem {
+    width: 18vw;
+    height: 7vw;
+    border-radius: 1vw;
+    padding-left: 2vw;
+    margin-left: 1vw;
+    color: 'black';
+    background-color: #A27C62;
+    margin-top: 14vw;
+}
+
+.menuContent{
+    padding-top: 1vw;
+}
+
+.menu-title{
+    align-items: center;
+    text-align: center;
+    font-size: 3vw;
+    padding-bottom: 2vw;
+}
