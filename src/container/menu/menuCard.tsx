@@ -1,7 +1,6 @@
 export default function MenuCard() {
   return (
     <div className="mainCard">
-      <img src="" />
       <div className="menuItem">
         <div className="menuContent">
           <div className="row">
