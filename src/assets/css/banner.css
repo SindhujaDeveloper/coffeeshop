@@ -3,6 +3,21 @@
     padding-right: 0;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .row > * {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .row > * {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
 /* @media (min-width: 1400px) and (max-width: 1699px) {
     .banner_image {
         height: 214px;

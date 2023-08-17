@@ -49,3 +49,34 @@
         opacity: 0.2;
     }
 }
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+    .form_login .signupTxt {
+        font-size: 16px;
+    }
+
+    .form_login .commonBtn {
+        height: 2.5rem;
+        font-size: 14px;
+    }
+
+    .form_login .input-group > .form-control {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .form_login .signupTxt {
+        font-size: 14px;
+    }
+
+    .form_login .commonBtn {
+        height: 2.3rem;
+        font-size: 12px;
+    }
+
+    .form_login .input-group > .form-control {
+        font-size: 14px;
+    }
+}

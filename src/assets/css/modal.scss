@@ -37,7 +37,6 @@
 }
 
 .form_profile {
-
     .form-control {
         background: #FFF3E6;
         border-radius: 8px;
@@ -53,16 +52,12 @@
         background-color: #FFF3E6;
         color: #6B3715;
         font-weight: 800;
-
-
     }
 
     .commonBtn {
         color: #FFFFFF;
-        width: 30%;
         background-color: #6B3715;
         height: 3rem;
-        // border: #6B3715 solid 0.1rem;
         border-radius: 1rem;
         width: 100%;
     }
@@ -70,5 +65,38 @@
     .commonBtn:disabled {
         background-color: #926546;
         color: #FFFFFF80;
+    }
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .modalBtn,
+    .btnMain {
+        width: 7rem;
+        height: 3.2rem;
+    }
+
+    .modalMsg {
+        font-size: 18px;
+    }
+
+    .form_profile .commonBtn {
+        height: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .modalBtn,
+    .btnMain {
+        width: 6rem;
+        height: 2.8rem;
+    }
+
+    .modalMsg {
+        font-size: 16px;
+    }
+
+    .form_profile .commonBtn {
+        height: 2.3rem;
     }
 }
