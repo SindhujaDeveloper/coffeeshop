@@ -5,3 +5,16 @@
     justify-content: center;
     cursor: pointer;
 }
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+    .signupTxt {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .signupTxt {
+        font-size: 12px;
+    }
+}

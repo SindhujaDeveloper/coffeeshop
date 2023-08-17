@@ -5,9 +5,7 @@ import personIcon from '../assets/images/person.png';
 import calendarIcon from '../assets/images/calendar.png';
 import genderIcon from '../assets/images/gender.png';
 import cityIcon from '../assets/images/city.png';
-import { useDispatch } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch , useSelector} from 'react-redux';
 import { Formik } from 'formik';
 import { signupRequest } from '../redux/actions/login';
 
@@ -20,7 +18,6 @@ interface IProfileModal {
 export const ProfileModal = ({ show, closeModal }: IProfileModal) => {
 
 	const dispatch = useDispatch();
-	// const navigate = useNavigate();
 
 	const { isLogin, userDetails } = useSelector((state: any) => state.login);
 
@@ -49,12 +46,11 @@ export const ProfileModal = ({ show, closeModal }: IProfileModal) => {
 
 						const disableUserDetails = () => {
 							if (
-								values.Firstname === userDetails?.Firstname &&
-								values.Lastname === userDetails?.Lastname &&
-								values.City === userDetails?.City &&
-								values.Gender === userDetails?.Gender &&
-								values.Birthdate === userDetails?.Birthdate &&
-								values.Mobileno === userDetails?.Mobileno && values.Mobileno !== ''
+								values.Firstname === '' ||
+								values.City === '' ||
+								values.Gender === '' ||
+								values.Birthdate === '' ||
+								values.Mobileno ===''
 							) return true
 						}
 

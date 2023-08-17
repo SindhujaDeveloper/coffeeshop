@@ -1,34 +1,101 @@
 .mainCard {
-    width: 20.3vw;
-    height: 24.8vw;
-    border-radius: 2vw;
+    width: 300px;
+    height: 330px;
+    border-radius: 10px;
     color: black;
     background-color: #926546;
 }
 
 .main-menulist {
-    padding-left: 10%;
+    padding-left: 15%;
     padding-right: 10%;
 }
 
-.menuItem {
-    width: 18vw;
-    height: 7vw;
-    border-radius: 1vw;
-    padding-left: 2vw;
-    margin-left: 1vw;
-    color: 'black';
-    background-color: #A27C62;
-    margin-top: 14vw;
-}
-
-.menuContent{
-    padding-top: 1vw;
-}
-
-.menu-title{
+.menuImage {
+    height: 230px;
+    padding-left: 10px;
     align-items: center;
+    display: flex;
+}
+
+.menu_images {
+    height: 200px;
+    width: 280px;
+    border-radius: 10px;
+}
+
+.menu_name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menuItem {
+    width: 300px;
+    height: 100px;
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    color: black;
+    background-color: #A27C62;
+}
+
+.menuContent {
+    padding-bottom: 10px;
+    font-size: 17px;
+    color: #FFFFFF;
+}
+
+.menu-title {
     text-align: center;
-    font-size: 3vw;
-    padding-bottom: 2vw;
+    padding-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .mainCard {
+        width: 80%;
+        height: auto;
+        border-radius: 2vw;
+    }
+
+    .menu-item {
+        width: 80%;
+        height: auto;
+        border-radius: 1vw;
+        padding-left: 5%;
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+
+    .menu-title {
+        font-size: 5vw;
+        padding-bottom: 5%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .mainCard {
+        width: 90%;
+        height: auto;
+        border-radius: 5vw;
+    }
+
+    .main-menulist {
+        padding: 5%;
+    }
+
+    .menuItem {
+        width: 90%;
+        height: auto;
+        border-radius: 3vw;
+        padding-left: 5%;
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+
+    .menu-title {
+        font-size: 6vw;
+        padding-bottom: 10%;
+    }
 }
