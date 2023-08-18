@@ -1,10 +1,51 @@
-import { Button, Image, Table, Container } from "react-bootstrap";
+import {
+  Button,
+  Image,
+  Table,
+  Container,
+  Dropdown,
+  ButtonGroup,
+  Form,
+} from "react-bootstrap";
 import CarouselPageImage from "../../assets/images/carousel.svg";
 import "../../assets/css/banner.scss";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import moment from "moment";
 
 export default function BannerPage() {
   const userDetails = useSelector((state: any) => state.login.userDetails);
+
+  const dropdownItems = ["Expresso", "Sandwich", "Snacks"];
+
+  const [personCount, setPersonCount] = useState(1);
+  const [selectedDate, setSelectedDate] = useState(
+    moment().format("YYYY-MM-D")
+  );
+  const [dropdownItem, setDropDownItem] = useState(dropdownItems[0]);
+
+  function handleInputChange(inputValue: string) {
+    const numericValue = inputValue.replace(/[^0-9]/g, "");
+    const parsedValue = parseInt(numericValue, 10);
+    if (isNaN(parsedValue)) {
+      setPersonCount(0);
+    } else {
+      setPersonCount(parsedValue);
+    }
+  }
+
+  console.log(selectedDate);
+
+  function scrollToTarget(id: string) {
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth", // Optional: Add smooth scrolling behavior
+        block: "start", // Scroll to the top of the element
+        inline: "nearest", // Align the element to the nearest edge of the viewport
+      });
+    }
+  }
 
   return (
     <div className="head-text">
@@ -22,7 +63,12 @@ export default function BannerPage() {
           A cup of coffee lasts only a moment, but it is that moment that makes
           your day better.{" "}
         </p>
-        <Button variant="light" className="bannerBtn">
+        <Button
+          variant="light"
+          className="bannerBtn"
+          id="booknow"
+          onClick={() => scrollToTarget("menu")}
+        >
           <p className="bannerBtnTxt">See Menu</p>
         </Button>
       </div>
@@ -41,7 +87,9 @@ export default function BannerPage() {
                 <td>Phone</td>
                 <td>Category</td>
                 <td>Attendance</td>
-                <td style={{ borderRightColor: "transparent" }}>Time</td>
+                <td style={{ borderRightColor: "transparent" }}>
+                  {"Date & Time"}
+                </td>
               </tr>
               <tr
                 style={{
@@ -55,9 +103,66 @@ export default function BannerPage() {
                   {userDetails?.Firstname || "Prema"}
                 </th>
                 <th>{userDetails?.Mobileno || "7868049366"}</th>
-                <th>{"Expresso"}</th>
-                <th>4 Person</th>
-                <th style={{ borderRightColor: "transparent" }}>12.00PM</th>
+                <th className="col-2">
+                  <Dropdown as={ButtonGroup}>
+                    <Dropdown.Toggle
+                      className="categoryDropdown"
+                      id="dropdown-basic"
+                    >
+                      {dropdownItem}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      {dropdownItems.map((it) => {
+                        return (
+                          <Dropdown.Item onClick={() => setDropDownItem(it)}>
+                            {it}
+                          </Dropdown.Item>
+                        );
+                      })}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </th>
+                <th className="col-3">
+                  <input
+                    type="text"
+                    className="col-2 validCount personCount is-invalid"
+                    value={personCount}
+                    pattern="[0-9]*"
+                    onChange={(e) => {
+                      console.log(e.target.value);
+                      handleInputChange(e.target.value);
+                    }}
+                  />
+                  {personCount > 1 ? " Persons" : " Person"}
+                  {personCount < 1 ? (
+                    <div className="invalid-feedback">
+                      {"enter atleast one person"}
+                    </div>
+                  ) : null}
+                </th>
+                <th
+                  style={{ borderRightColor: "transparent" }}
+                  className="dateAndTime col-3"
+                >
+                  <Form.Control
+                    type="date"
+                    className="col-2 personCount"
+                    value={selectedDate}
+                    onChange={(event: any) => {
+                      console.log(event.target.value);
+                      setSelectedDate(event.target.value);
+                    }}
+                  />
+                  {/* <input
+                    className="col-5 personCount is-invalid"
+                    value={selectedDate}
+                    onChange={(event) => {
+                      console.log(event.target.value);
+                      setSelectedDate(event.target.value);
+                    }}
+                  /> */}
+                </th>
               </tr>
             </tbody>
           </Table>

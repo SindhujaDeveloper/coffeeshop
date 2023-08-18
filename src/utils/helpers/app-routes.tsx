@@ -24,5 +24,18 @@ export const routes = [
             baseRoute: 'main',
             component: lazy(() => import('../../container/login'))
         }]
-    }
+    },
+    // {
+    //     name: 'MenuList',
+    //     route: '/menu',
+    //     baseRoute: 'main',
+    //     public: 'true',
+    //     component: lazy(() => import('../../container/menu'))
+    // },
+    // {
+    //     name: 'Contact',
+    //     route: '/contact',
+    //     baseRoute: 'home',
+    //     component: lazy(() => import('../../container/footer'))
+    // },
 ]
