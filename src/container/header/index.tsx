@@ -21,10 +21,10 @@ export default function Header() {
 
   return (
     <>
-      <Navbar expand="lg" className="navbar-style" sticky="top">
+      <Navbar expand="lg" className="navbar-style" fixed="top">
         <Container>
-          <Navbar.Brand href="#">
-            <Image src={logo} width="88px" height="87px" />
+          <Navbar.Brand>
+            <Image src={logo} width="55px" height="87px" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -36,16 +36,16 @@ export default function Header() {
               navbarScroll
             >
               <Nav.Item>
-                <Nav.Link href="#action1">Home</Nav.Link>
+                <Nav.Link href="#home">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="#action2">Gallery</Nav.Link>
+                <Nav.Link href="#booknow">Book Now</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="#action4">Menu</Nav.Link>
+                <Nav.Link href="#menu">Menu</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="#action3">Contact Us</Nav.Link>
+                <Nav.Link href="#contact">Contact Us</Nav.Link>
               </Nav.Item>
             </Nav>
             <div className="sgnInsgnOutBtn">

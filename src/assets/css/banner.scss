@@ -1,106 +1,177 @@
-.row>* {
-    padding-left: 0;
-    padding-right: 0;
+.row > * {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .background {
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background: linear-gradient(89.87deg, #000000 0.1%, rgba(0, 0, 0, 0) 43.26%);
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(89.87deg, #000000 0.1%, rgba(0, 0, 0, 0) 43.26%);
 }
 
 .head-text {
-    position: relative;
+  position: relative;
 }
 
 .text-on-image {
-    position: absolute;
-    right: 50%;
-    left: 12%;
-    bottom: 15%;
+  position: absolute;
+  right: 50%;
+  left: 12%;
+  bottom: 15%;
 }
 
 .text {
-    font-style: italic;
-    font-weight: bold;
-    font-size: 64px;
-    line-height: 75px;
-    color: #FFFFFF;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 75px;
+  color: #ffffff;
 }
 
 .bannerBtn {
-    width: 136px;
-    height: 36px;
+  width: 136px;
+  height: 36px;
 }
 
 .bannerBtnTxt {
-    font-style: normal;
-    font-weight: 800;
-    font-size: 15px;
-    color: #6B3715;
-    text-align: center;
-    justify-content: center;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  color: #6b3715;
+  text-align: center;
+  justify-content: center;
 }
 
 .bannerBottomBox {
+  background-color: #926546;
+  width: 78%;
+  position: absolute;
+  bottom: -50px;
+  left: 11%;
+  display: flex;
+  flex-direction: row;
+
+  .col {
+    padding-left: 5%;
+    width: 80%;
     background-color: #926546;
-    width: 78%;
-    position: absolute;
-    bottom: -50px;
-    left: 11%;
-    display: flex;
-    flex-direction: row;
+  }
 
-    .col {
-        padding-left: 5%;
-        width: 80%;
+  .table {
+    color: #ffffff;
+    margin-top: 20px;
+    td,
+    th {
+      color: #ffffff;
+      background-color: #926546;
     }
-
-    .table {
-        color: #FFFFFF;
-        margin-top: 20px;
-    }
+  }
 }
 
 .bookNow {
-    align-self: center;
-    padding-right: 20px;
+  align-self: center;
+  padding-right: 20px;
+}
+
+.validCount {
+  margin-top: 3px;
+  padding-top: 4px;
+  border-radius: 5px;
+}
+
+.personCount {
+  background-color: #926546;
+  color: #ffffff;
+  border-color: #ffffff;
+  border-width: 3px;
+  border-style: double;
+  text-align: center;
+}
+
+.personCount:hover,
+.personCount:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 5px #ffffff;
+  outline: none;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.dateAndTime {
+  text-align: -webkit-center;
+  .form-control {
+    width: 125px;
+  }
+}
+
+.personCount::-webkit-calendar-picker-indicator {
+    padding-top: 0px;
+    margin-top: 0px;
+    filter: invert(1); /* Change icon color */
+  }
+  
+.show {
+  background-color: #926546;
+}
+
+#dropdown-basic {
+  background-color: #926546;
+  background-color: #926546;
+  border-color: #ffffff;
+  border-width: 3px;
+  border-style: double;
+}
+
+.dropdown-item {
+  color: #ffffff;
+}
+
+.dropdown-item:hover {
+  background-color: #ffffff;
+}
+
+.categoryDropdown:focus,
+.categoryDropdown:hover {
+  background-color: #926546;
+  border-color: #ffffff;
+  box-shadow: 0 0 5px #ffffff;
+  outline: none;
 }
 
 /* Responsive Styles */
 @media only screen and (max-width: 600px) {
-    .text-on-image {
-        bottom: 42%;
-    }
+  .text-on-image {
+    bottom: 42%;
+  }
 
-    .bannerBottomBox .col {
-        padding-left: 3%; /* Adjust padding for smaller screens */
-        width: 90%; /* Adjust width for smaller screens */
-    }
+  .bannerBottomBox .col {
+    padding-left: 3%; /* Adjust padding for smaller screens */
+    width: 90%; /* Adjust width for smaller screens */
+  }
 
-    .bookNow {
-        align-self: center;
-        padding-right: 10px;
-    }
+  .bookNow {
+    align-self: center;
+    padding-right: 10px;
+  }
 
-    .text {
-        font-size: 14px;
-        line-height: 13px;
-    }
+  .text {
+    font-size: 14px;
+    line-height: 13px;
+  }
 
-    .bannerBtn {
-        width: 86px;
-        height: 20px;
-    }
+  .bannerBtn {
+    width: 86px;
+    height: 20px;
+  }
 
-    .bannerBtnTxt {
-        font-size: 9px;
-    }
+  .bannerBtnTxt {
+    font-size: 9px;
+  }
 
-    .bannerBottomBox {
-        bottom: -10px;
-    }
+  .bannerBottomBox {
+    bottom: -10px;
+  }
 }

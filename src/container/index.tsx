@@ -4,10 +4,12 @@ import Header from "./header";
 import welcomeCoffee from "../assets/images/welcome_coffee.png";
 import "../assets/css/index.css";
 import MenuList from "./menu";
+import Footer from "./footer";
+
 export default function Main() {
   return (
     <Container fluid>
-      <Row>
+      <Row id="home">
         <Header />
       </Row>
       <Row>
@@ -32,8 +34,11 @@ export default function Main() {
           </Col>
         </Row>
       </Container>
-      <Row>
+      <Row id="menu"  style={{ paddingTop: "8%" }}>
         <MenuList />
+      </Row>
+      <Row id="contact" style={{ paddingTop: "8%" }}>
+        <Footer />
       </Row>
     </Container>
   );

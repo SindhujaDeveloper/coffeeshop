@@ -6,7 +6,7 @@ import cappuccino from "../../assets/images/cappuccino.png";
 
 export default function MenuList() {
   return (
-    <div className="main-menulist">
+    <div className="main-menulist" id="menu">
       <div className="menu-title welcome_title">Menu</div>
       <div>
         <div className="row">
