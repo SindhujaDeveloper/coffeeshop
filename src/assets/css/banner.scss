@@ -108,14 +108,16 @@
 }
 
 .personCount::-webkit-calendar-picker-indicator {
-    padding-top: 0px;
-    margin-top: 0px;
-    filter: invert(1); /* Change icon color */
+  padding-top: 0px;
+  margin-top: 0px;
+  filter: invert(1); /* Change icon color */
+}
+
+.dropdown {
+  .show {
+    background-color: #926546;
   }
-  
-// .show {
-//   background-color: #926546;
-// }
+}
 
 #dropdown-basic {
   background-color: #926546;
