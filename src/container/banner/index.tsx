@@ -113,9 +113,12 @@ export default function BannerPage() {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      {dropdownItems.map((it) => {
+                      {dropdownItems.map((it, index) => {
                         return (
-                          <Dropdown.Item onClick={() => setDropDownItem(it)}>
+                          <Dropdown.Item
+                            key={index}
+                            onClick={() => setDropDownItem(it)}
+                          >
                             {it}
                           </Dropdown.Item>
                         );

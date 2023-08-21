@@ -12,7 +12,7 @@ const Footer = () => {
           </div>
           <div className="footer-info">
             <h3>Contact Us</h3>
-            <p>Update soon</p>
+            <p>Update Soon</p>
             <p>Email: crazydeveloper.p@gmail.com</p>
             <p>Phone: 8098949366</p>
           </div>
