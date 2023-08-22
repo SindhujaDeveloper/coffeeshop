@@ -13,6 +13,7 @@ export const menuItems = [
     image: blackCoffee,
     id: 1,
     count: 0,
+    price: 1,
   },
   {
     name: "Expresso",
@@ -21,6 +22,7 @@ export const menuItems = [
     image: expresso,
     id: 2,
     count: 0,
+    price: 1,
   },
   {
     name: "Cappuccino",
@@ -29,6 +31,7 @@ export const menuItems = [
     image: cappuccino,
     id: 3,
     count: 0,
+    price: 1,
   },
   {
     name: "Flat White Coffee",
@@ -37,6 +40,7 @@ export const menuItems = [
     image: flatWhite,
     id: 4,
     count: 0,
+    price: 1,
   },
   {
     name: "Art Coffee",
@@ -45,6 +49,7 @@ export const menuItems = [
     image: artCoffee,
     id: 5,
     count: 0,
+    price: 1,
   },
   {
     name: "Mocha Coffee",
@@ -53,5 +58,6 @@ export const menuItems = [
     image: mochaCoffee,
     id: 6,
     count: 0,
+    price: 1,
   },
 ];

@@ -70,6 +70,15 @@ export default function Header() {
                       </div>
                       <div
                         onClick={() => {
+                          // setShowCart(true);
+                          setShowButtons(false);
+                          navigate('/cart')
+                        }}
+                      >
+                        My Cart
+                      </div>
+                      <div
+                        onClick={() => {
                           setAlert(true);
                           setShowButtons(false);
                         }}
@@ -104,6 +113,7 @@ export default function Header() {
           setAlert(false);
         }}
       />
+      {/* <CartModal show={showCart} closeModal={() => setShowCart(false)} /> */}
     </>
   );
 }

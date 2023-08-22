@@ -29,7 +29,7 @@ export default function MenuList() {
       <div className="row">
         {menuItems.map((it) => {
           return (
-            <div className="col" style={{ marginBottom: "50px" }} key={it.id}>
+            <div className="col-4" style={{ marginBottom: "50px"}} key={it.id}>
               <div className="mainCard">
                 <div className="menuImage">
                   <img

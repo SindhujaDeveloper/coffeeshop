@@ -19,28 +19,25 @@
 
 // export default store;
 
-
 //Persist config with reducer
-import createSagaMiddleware, { SagaMiddleware } from 'redux-saga';
-import { createLogger } from 'redux-logger';
-import { persistStore, persistReducer } from 'redux-persist';
-import { createBlacklistFilter } from 'redux-persist-transform-filter';
-import localForage from 'localforage';
-import { createStore, applyMiddleware, Middleware } from 'redux';
+import createSagaMiddleware, { SagaMiddleware } from "redux-saga";
+import { createLogger } from "redux-logger";
+import { persistStore, persistReducer } from "redux-persist";
+import { createBlacklistFilter } from "redux-persist-transform-filter";
+import localForage from "localforage";
+import { createStore, applyMiddleware, Middleware } from "redux";
 
-import { rootSaga } from './saga'
+import { rootSaga } from "./saga";
 import rootReducer from "./reducers/rootReducer";
 
 const persistConfig = {
-    key: 'reduxPersistState',
-    timeout: 0,
-    storage: localForage,
-    whitelist: [
-        'login',
-    ],
-    transforms: [
-        createBlacklistFilter('login', ['loading', 'errorMessage']),
-    ]
+  key: "reduxPersistState",
+  timeout: 0,
+  storage: localForage,
+  whitelist: ["login", "menu"],
+  transforms: [
+    createBlacklistFilter("login", ["loading", "errorMessage"]),
+  ],
 };
 
 const sagaMiddleWare: SagaMiddleware<{}> = createSagaMiddleware();
@@ -51,10 +48,7 @@ const pReducer = persistReducer(persistConfig, rootReducer);
 const logger: Middleware = createLogger();
 middleWare.push(logger);
 
-const store = createStore(
-    pReducer,
-    applyMiddleware(...middleWare)
-)
+const store = createStore(pReducer, applyMiddleware(...middleWare));
 
 const persistor = persistStore(store);
 
