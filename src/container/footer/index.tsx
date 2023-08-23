@@ -1,21 +1,21 @@
-import React from "react";
+import { Col, Row } from "react-bootstrap";
 import "../../assets/css/footer.css";
 import logo from "../../assets/images/logo.png";
 
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="footer-content">
-        <div className="footer-logo">
+      <Row className="footer-content">
+        <Col className="footer-logo">
           <img src={logo} alt="Coffee Shop Logo" />
-        </div>
-        <div className="footer-info">
+        </Col>
+        <Col className="footer-info">
           <h3>Contact Us</h3>
           <p>Update Soon</p>
           <p>Email: crazydeveloper.p@gmail.com</p>
           <p>Phone: 8098949366</p>
-        </div>
-        <div className="footer-links">
+        </Col>
+        <Col className="footer-links">
           <h3>Quick Links</h3>
           <ul>
             <li>
@@ -31,8 +31,8 @@ const Footer = () => {
               <a href="#contact">Contact</a>
             </li>
           </ul>
-        </div>
-      </div>
+        </Col>
+      </Row>
       <div className="footer-bottom">
         <p>&copy; 2023 Coffee Shop. All rights reserved.</p>
       </div>

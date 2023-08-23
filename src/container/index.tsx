@@ -16,9 +16,9 @@ export default function Main() {
         <BannerPage />
       </Row>
       <Container>
-        <Row style={{ paddingTop: "8%" }}>
+        <Row style={{ paddingTop: "2%" }}>
           <Col
-            style={{ textAlign: "center", paddingTop: "8%", paddingLeft: "2%" }}
+            style={{ textAlign: "center", paddingTop: "5%", paddingLeft: "2%" }}
           >
             <p className="welcome_title">Always Fresh</p>
             <p className="welcome_text">
@@ -34,10 +34,10 @@ export default function Main() {
           </Col>
         </Row>
       </Container>
-      <Row id="menu"  style={{ paddingTop: "8%" }}>
+      <Row id="menu" style={{ paddingTop: "2%" }}>
         <MenuList />
       </Row>
-      <Row id="contact" style={{ paddingTop: "8%" }}>
+      <Row id="contact" style={{ paddingTop: "5%" }}>
         <Footer />
       </Row>
     </Container>

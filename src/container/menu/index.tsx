@@ -24,12 +24,19 @@ export default function MenuList() {
   };
 
   return (
-    <Container className="main-menulist" id="menu">
+    <div className="main-menulist" id="menu">
       <div className="menu-title welcome_title">Menu</div>
       <Row>
         {menuItems.map((it) => {
           return (
-            <Col sm={4} style={{ marginBottom: "50px" }} key={it.id}>
+            <Col
+              style={{
+                marginBottom: "50px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+              key={it.id}
+            >
               <div className="mainCard">
                 <div className="menuImage">
                   <img
@@ -88,6 +95,6 @@ export default function MenuList() {
           );
         })}
       </Row>
-    </Container>
+    </div>
   );
 }

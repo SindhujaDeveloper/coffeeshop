@@ -7,7 +7,7 @@
 }
 
 .main-menulist {
-    padding-left: 15%;
+    padding-left: 10%;
     padding-right: 10%;
 }
 
@@ -16,6 +16,7 @@
     padding-left: 10px;
     align-items: center;
     display: flex;
+    justify-content: center;
 }
 
 .menu_images {
@@ -93,13 +94,13 @@
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
     .mainCard {
-        width: 80%;
+        width: 300px;
         height: auto;
         border-radius: 2vw;
     }
 
     .menu-item {
-        width: 80%;
+        width: 300px;
         height: auto;
         border-radius: 1vw;
         padding-left: 5%;
