@@ -1,38 +1,38 @@
 import {
   Button,
   Image,
-  Table,
-  Container,
-  Dropdown,
-  ButtonGroup,
-  Form,
+  // Table,
+  // Container,
+  // Dropdown,
+  // ButtonGroup,
+  // Form,
 } from "react-bootstrap";
 import CarouselPageImage from "../../assets/images/carousel.svg";
 import "../../assets/css/banner.scss";
-import { useSelector } from "react-redux";
-import { useState } from "react";
-import moment from "moment";
+// import { useSelector } from "react-redux";
+// import { useState } from "react";
+// import moment from "moment";
 
 export default function BannerPage() {
-  const userDetails = useSelector((state: any) => state.login.userDetails);
+  // const userDetails = useSelector((state: any) => state.login.userDetails);
 
-  const dropdownItems = ["Expresso", "Sandwich", "Snacks"];
+  // const dropdownItems = ["Expresso", "Sandwich", "Snacks"];
 
-  const [personCount, setPersonCount] = useState(1);
-  const [selectedDate, setSelectedDate] = useState(
-    moment().format("YYYY-MM-D")
-  );
-  const [dropdownItem, setDropDownItem] = useState(dropdownItems[0]);
+  // const [personCount, setPersonCount] = useState(1);
+  // const [selectedDate, setSelectedDate] = useState(
+  //   moment().format("YYYY-MM-D")
+  // );
+  // const [dropdownItem, setDropDownItem] = useState(dropdownItems[0]);
 
-  function handleInputChange(inputValue: string) {
-    const numericValue = inputValue.replace(/[^0-9]/g, "");
-    const parsedValue = parseInt(numericValue, 10);
-    if (isNaN(parsedValue)) {
-      setPersonCount(0);
-    } else {
-      setPersonCount(parsedValue);
-    }
-  }
+  // function handleInputChange(inputValue: string) {
+  //   const numericValue = inputValue.replace(/[^0-9]/g, "");
+  //   const parsedValue = parseInt(numericValue, 10);
+  //   if (isNaN(parsedValue)) {
+  //     setPersonCount(0);
+  //   } else {
+  //     setPersonCount(parsedValue);
+  //   }
+  // }
 
   function scrollToTarget(id: string) {
     const targetElement = document.getElementById(id);

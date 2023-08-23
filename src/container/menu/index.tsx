@@ -3,7 +3,7 @@ import "../../assets/css/menu.css";
 import { useDispatch } from "react-redux";
 import { cartItemsListResponse } from "../../redux/actions/menu";
 import { useSelector } from "react-redux";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 export default function MenuList() {
   const dispatch = useDispatch();
