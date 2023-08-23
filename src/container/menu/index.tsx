@@ -3,33 +3,33 @@ import "../../assets/css/menu.css";
 import { useDispatch } from "react-redux";
 import { cartItemsListResponse } from "../../redux/actions/menu";
 import { useSelector } from "react-redux";
+import { Col, Container, Row } from "react-bootstrap";
 
 export default function MenuList() {
-
   const dispatch = useDispatch();
   const cartItems = useSelector((state: any) => state.menu.cartItems);
 
   const handleAddToCart = (product: any, action?: string) => {
-    const updatedCart = cartItems.map((item: { id: number; count: number; }) =>
+    const updatedCart = cartItems.map((item: { id: number; count: number }) =>
       item.id === product.id ? { ...item, count: item.count + 1 } : item
     );
     dispatch(cartItemsListResponse(updatedCart));
   };
 
   const handleRemoveFromCart = (id: number, action?: string) => {
-    const updatedCart = cartItems.map((item: { id: number; count: number; }) =>
+    const updatedCart = cartItems.map((item: { id: number; count: number }) =>
       item.id === id ? { ...item, count: Math.max(item.count - 1, 0) } : item
     );
     dispatch(cartItemsListResponse(updatedCart));
   };
 
   return (
-    <div className="main-menulist" id="menu">
+    <Container className="main-menulist" id="menu">
       <div className="menu-title welcome_title">Menu</div>
-      <div className="row">
+      <Row>
         {menuItems.map((it) => {
           return (
-            <div className="col-4" style={{ marginBottom: "50px"}} key={it.id}>
+            <Col sm={4} style={{ marginBottom: "50px" }} key={it.id}>
               <div className="mainCard">
                 <div className="menuImage">
                   <img
@@ -45,8 +45,9 @@ export default function MenuList() {
                       <div>{it.time}</div>
                       <div className="col-7">{it.rate}</div>
                       <div className="col-5">
-                        {cartItems?.find((item: { id: number; }) => item.id === it.id)?.count !==
-                        0 ? (
+                        {cartItems?.find(
+                          (item: { id: number }) => item.id === it.id
+                        )?.count !== 0 ? (
                           <div className="item-btns">
                             <button
                               className="add-btn"
@@ -58,8 +59,9 @@ export default function MenuList() {
                             </button>
                             <div>
                               {
-                                cartItems.find((items: { id: number; }) => items.id === it.id)
-                                  ?.count
+                                cartItems.find(
+                                  (items: { id: number }) => items.id === it.id
+                                )?.count
                               }
                             </div>
                             <button
@@ -82,10 +84,10 @@ export default function MenuList() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Col>
           );
         })}
-      </div>
-    </div>
+      </Row>
+    </Container>
   );
 }

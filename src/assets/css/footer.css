@@ -1,5 +1,5 @@
 /* Footer styles */
-footer {
+.footer {
     background-color: #926546;
     color: #fff;
     padding: 0px 0;
@@ -19,7 +19,8 @@ footer {
     height: auto;
 }
 
-.footer-info, .footer-links {
+.footer-info,
+.footer-links {
     flex: 1;
     padding: 0 20px;
 }

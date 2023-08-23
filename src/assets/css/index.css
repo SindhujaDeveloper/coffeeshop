@@ -1,5 +1,6 @@
 body {
     font-family: 'Roboto';
+    margin: 0px;
 }
 
 .welcome_title {
@@ -26,6 +27,10 @@ body {
         line-height: 44px;
     }
 
+    .bannerPage {
+        padding-top: 117px;
+    }
+
     .welcome_text {
         font-size: 20px;
         line-height: 26px;
@@ -36,6 +41,11 @@ body {
     .welcome_title {
         font-size: 28px;
         line-height: 36px;
+    }
+
+    .bannerPage {
+        padding-top: 108px;
+        width: fit-content;
     }
 
     .welcome_text {

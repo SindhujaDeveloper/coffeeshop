@@ -12,7 +12,7 @@ export default function Main() {
       <Row id="home">
         <Header />
       </Row>
-      <Row>
+      <Row className="bannerPage">
         <BannerPage />
       </Row>
       <Container>

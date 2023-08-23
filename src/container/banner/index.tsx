@@ -50,11 +50,7 @@ export default function BannerPage() {
   return (
     <div className="head-text">
       <div className="head-image">
-        <Image
-          src={CarouselPageImage}
-          className="banner_image"
-          style={{ width: "100%" }}
-        />
+        <Image src={CarouselPageImage} className="banner_image" />
         <div className="background"></div>
       </div>
       <div className="text-on-image">

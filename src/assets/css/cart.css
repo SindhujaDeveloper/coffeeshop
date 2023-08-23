@@ -1,0 +1,129 @@
+.centerAlign {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+}
+
+.images {
+    padding-bottom: 30px;
+    padding-left: 30px;
+}
+
+.mainCart {
+    width: 50%;
+    padding-bottom: 10%;
+}
+
+.cartTitle {
+    padding-top: 5%;
+    color: #A27C62;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 12px;
+    font-size: 20px;
+}
+
+.cartPrice {
+    padding-top: 2%;
+}
+
+.cartItemName {
+    font-size: 17px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.priceForSingle {
+    padding-left: 40px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding-right: 40px;
+    height: 38px;
+    font-size: 17px;
+}
+
+.cartTotalLeft {
+    padding-left: 5%;
+    font-weight: bold;
+    font-size: 19px;
+    display: flex;
+    align-items: flex-end;
+    height: 38px;
+    padding-top: 40px;
+    justify-content: flex-start;
+}
+
+.cartTotalRight {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 50px;
+    height: 38px;
+    padding-top: 40px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.btnsRow {
+    position: fixed;
+    bottom: 2px;
+    width: -webkit-fill-available;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #A27C62;
+}
+
+.btns {
+    background-color: #926546;
+    border-color: #926546;
+    font-size: 20px;
+}
+
+.btn-1 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-2 {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px;
+}
+
+@media only screen and (max-width: 964px) {
+    .images {
+        padding-left: 0px;
+    }
+
+    .mainCart {
+        padding-left: 30px;
+        width: 100%;
+        padding-bottom: 20%;
+    }
+
+    .cartTitle {
+        padding-top: 5%;
+        color: #A27C62;
+        text-align: left;
+        font-weight: bold;
+        padding-left: 0%;
+        font-size: 20px;
+    }
+
+    .cartItemName {
+        padding-left: 12px;
+    }
+
+    .priceForSingle {
+        padding-left: 0px;
+    }
+
+
+}
